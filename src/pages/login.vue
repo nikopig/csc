@@ -63,13 +63,14 @@ export default {
       this.user.pnum = e.target.innerHTML
       document.getElementsByClassName('pnumdata')[0].style.display = 'none'
     },
+        // store
+    ...mapMutations(['saveUser']),
     // 登陆
     login () {
       this.saveUser(this.user)
       console.log(this.$store.state.user)
       alert('登陆成功')
     },
-    ...mapMutations(['saveUser']),
     // 退出
     exit () {}
   }
