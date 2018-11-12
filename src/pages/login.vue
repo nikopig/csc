@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper page-login">
     <div class="container">
-      <div class="left">
-        <img class="leftimg" src="../../static/img/loginleft.png" alt="穿梭车">
+      <div class="wrap">
+        <img class="img" src="../../static/img/loginleft.png" alt="穿梭车">
         <div class="txt">
           <img class="logo" src="../../static/img/logoicon.png" alt="九州通">
           <div class="introC">穿梭车库一体机管理系统</div>
@@ -74,15 +74,15 @@ export default {
   .container {
     width: 78%;
     margin: 0 auto;
+    height: 100%;
     padding: 11% 0;
-    clear: both;
-    .left {
-      float: left;
-      height: 5.05rem;
+    display: flex;
+    .wrap {
       position: relative;
-      .leftimg {
+      height: 5.0467rem;
+      .img {
         width: auto;
-        height: 5.05rem;
+        height: 5.0467rem;
       }
       .txt {
         font-family: "Microsoft YaHei","微软雅黑";
@@ -93,7 +93,7 @@ export default {
         top: calc(50% - 0.7rem);
         text-align: center;
         color: #fff;
-        background-color: rgba(0,0,0,0.6);
+        background-color: rgba(0,0,0,0.678);
         padding-top: .17rem;
         .logo {
           width: auto;
@@ -110,83 +110,81 @@ export default {
         }
       }
     }
-    .right {
-      float: left;
-      .formbox {
-        font-family: "FZLTCHK";
-        width: 4rem;
-        height: 3.45rem;
-        padding: 0.8rem;
-        background-color: #fff;
-        .title {
-          font-size: .26rem;
-          color: rgb(53, 64, 82);
-          font-weight: bolder;
+    .formbox {
+      box-sizing: border-box;
+      font-family: "FZLTCHK";
+      flex: 1;
+      height: 5.0467rem;
+      padding: 0.7rem 1.3rem;
+      background-color: #fff;
+      .title {
+        font-size: .26rem;
+        color: rgb(53, 64, 82);
+        font-weight: bolder;
+      }
+      .form {
+        margin-top: .20rem;
+        input{
+          font-family: "Microsoft YaHei","微软雅黑";
+          width: 100%;
+          color: #666;
+          box-sizing: border-box;
+          height: .49rem;
+          line-height: .49rem;
+          padding: .1rem 0 .1rem .4rem;
+          border: .01rem solid rgb(223, 227, 233);
+          margin-top: .14rem;
+          outline: none;
         }
-        .form {
-          margin-top: .25rem;
-          input{
-            font-family: "Microsoft YaHei","微软雅黑";
-            width: 100%;
-            color: #666;
-            box-sizing: border-box;
-            height: .44rem;
-            line-height: .44rem;
-            padding: .1rem 0 .1rem .4rem;
-            border: .01rem solid rgb(223, 227, 233);
-            margin-top: .14rem;
-            outline: none;
+        input::-webkit-input-placeholder {
+          color: rgb(184, 187, 192);
+          letter-spacing: .01rem;
+        }
+        input:-moz-placeholder {
+          color: rgb(184, 187, 192);
+          letter-spacing: .01rem;
+        }
+        input::-moz-placeholder {
+          color: rgb(184, 187, 192);
+          letter-spacing: .01rem;
+        }
+        input:-ms-input-placeholder {
+          color: rgb(184, 187, 192);
+          letter-spacing: .01rem;
+        }
+        .clear {
+          clear: both;
+          .IP {
+            float: left;
+            width: 62%;
+            padding-left: .15rem;
           }
-          input::-webkit-input-placeholder {
-            color: rgb(184, 187, 192);
-            letter-spacing: .01rem;
+          .port {
+            float: right;
+            width: 35%;
+            padding-left: .15rem;
           }
-          input:-moz-placeholder {
-            color: rgb(184, 187, 192);
-            letter-spacing: .01rem;
-          }
-          input::-moz-placeholder {
-            color: rgb(184, 187, 192);
-            letter-spacing: .01rem;
-          }
-          input:-ms-input-placeholder {
-            color: rgb(184, 187, 192);
-            letter-spacing: .01rem;
-          }
-          .clear {
-            clear: both;
-            .IP {
-              float: left;
-              width: 62%;
-              padding-left: .15rem;
-            }
-            .port {
-              float: right;
-              width: 35%;
-              padding-left: .15rem;
-            }
-          }
-          .pnum {
-            background: url(../../static/img/arrowicon.png) no-repeat .14rem 53%;
-          }
-          .jnum {
-            background: url(../../static/img/usericon.png) no-repeat .14rem 53%;
-          }
-          .password {
-            background: url(../../static/img/passicon.png) no-repeat .14rem 53%;
-          }
-          .btn {
-            box-sizing: border-box;
-            width: 100%;
-            height: .44rem;
-            padding: .08rem;
-            font-size: .2rem;
-            margin-top: .14rem;
-            letter-spacing: .05rem;
-            background-color: #198efb;
-            border: none;
-            color: #fff;
-          }
+        }
+        .pnum {
+          background: url(../../static/img/arrowicon.png) no-repeat .14rem 52%;
+        }
+        .jnum {
+          background: url(../../static/img/usericon.png) no-repeat .14rem 52%;
+        }
+        .password {
+          background: url(../../static/img/passicon.png) no-repeat .14rem 52%;
+        }
+        .btn {
+          box-sizing: border-box;
+          width: 100%;
+          height: .49rem;
+          padding: .08rem;
+          font-size: .2rem;
+          margin-top: .14rem;
+          letter-spacing: .05rem;
+          background-color: #198efb;
+          border: none;
+          color: #fff;
         }
       }
     }
