@@ -24,6 +24,11 @@ export default new Router({
       path: '/checkerBox',
       name: 'checkerBox',
       component: resolve => require(['../pages/checker-box'], resolve)
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: resolve => require(['../pages/login'], resolve)
     }
   ]
 })
