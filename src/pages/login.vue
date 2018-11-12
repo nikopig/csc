@@ -2,15 +2,15 @@
   <div class="wrapper page-login">
     <div class="container">
       <div class="wrap">
-        <img class="img" src="../../static/img/loginleft.png" alt="穿梭车">
+        <img class="img" src="/static/img/loginleft.png" alt="穿梭车">
         <div class="txt">
-          <img class="logo" src="../../static/img/logoicon.png" alt="九州通">
+          <img class="logo" src="/static/img/logoicon.png" alt="九州通">
           <div class="introC">穿梭车库一体机管理系统</div>
           <div class="introE">SHUTTLE GARAGE INTEGRATED MANAGEMENT SYSTEM</div>
         </div>
       </div>
       <div class="right">
-        <div class="formbox">
+        <div class="formwrap">
           <div class="title">用户登录</div>
           <div class="form">
             <div class="item clear">
@@ -110,7 +110,7 @@ export default {
         }
       }
     }
-    .formbox {
+    .formwrap {
       box-sizing: border-box;
       font-family: "FZLTCHK";
       flex: 1;
@@ -166,13 +166,13 @@ export default {
           }
         }
         .pnum {
-          background: url(../../static/img/arrowicon.png) no-repeat .14rem 52%;
+          background: url(/static/img/arrowicon.png) no-repeat .14rem 52%;
         }
         .jnum {
-          background: url(../../static/img/usericon.png) no-repeat .14rem 52%;
+          background: url(/static/img/usericon.png) no-repeat .14rem 52%;
         }
         .password {
-          background: url(../../static/img/passicon.png) no-repeat .14rem 52%;
+          background: url(/static/img/passicon.png) no-repeat .14rem 52%;
         }
         .btn {
           box-sizing: border-box;
