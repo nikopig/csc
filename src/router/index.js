@@ -6,6 +6,11 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/',
+      name: 'index',
+      component: resolve => require(['../pages/index'], resolve)
+    },
+    {
       path: '/pick',
       name: 'pick',
       component: resolve => require(['../pages/pick'], resolve)

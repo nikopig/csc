@@ -6,7 +6,11 @@ import router from './router'
 import MintUi from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import '@/assets/css/common.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 import store from './store'
+
+Vue.use(VueAwesomeSwiper)
 Vue.use(MintUi)
 Vue.config.productionTip = false
 
