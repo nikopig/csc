@@ -12,7 +12,6 @@
       <div class="right">
         <div class="formwrap">
           <div class="title">用户登录</div>
-          <span class="icon-account"></span>
           <div class="form">
             <div class="item first">
               <input type="text" class="IP" placeholder="服务器IP" name="IP" id="IP" v-model="user.IP">
@@ -79,6 +78,7 @@ export default {
 </script>
 <style lang="less">
 .page-login {
+  font-family: "Microsoft YaHei","微软雅黑";
   position: relative;
   background: #e8eaf1;
   height: 100%;
@@ -98,7 +98,6 @@ export default {
         height: 5.32rem;
       }
       .txt {
-        font-family: "Microsoft YaHei","微软雅黑";
         position: absolute;
         left: 0;
         width: 100%;
@@ -126,7 +125,6 @@ export default {
     }
     .formwrap {
       box-sizing: border-box;
-      font-family: "FZLTCHK";
       flex: 1;
       height: 5.32rem;
       padding: 0.95rem 1.32rem;
@@ -140,7 +138,6 @@ export default {
         position: relative;
         margin-top: .17rem;
         input{
-          font-family: "Microsoft YaHei","微软雅黑";
           width: 100%;
           color: #666;
           font-size: .16rem;
@@ -182,7 +179,6 @@ export default {
           overflow-y: scroll;
           li {
             display: inline-block;
-            font-family: "Microsoft YaHei","微软雅黑";
             width: 100%;
             color: #666;
             font-size: .16rem;
