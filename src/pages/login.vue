@@ -76,7 +76,7 @@ export default {
     width: 78%;
     margin: 0 auto;
     height: 89%;
-    padding-top:11%; 
+    padding-top:11%;
     display: flex;
     .wrap {
       position: relative;
@@ -130,7 +130,7 @@ export default {
           font-family: "Microsoft YaHei","微软雅黑";
           width: 100%;
           color: #666;
-          font-size: .13rem;
+          font-size: .16rem;
           box-sizing: border-box;
           height: .46rem;
           line-height: .46rem;
@@ -196,6 +196,4 @@ export default {
     }
   }
 }
-</style>
-<style lang="less" scoped>
 </style>
