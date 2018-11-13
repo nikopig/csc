@@ -12,14 +12,18 @@
       <div class="right">
         <div class="formwrap">
           <div class="title">用户登录</div>
+          <span class="icon-account"></span>
           <div class="form">
-            <div class="item clear">
+            <div class="item first">
               <input type="text" class="IP" placeholder="服务器IP" name="IP" id="IP" v-model="user.IP">
               <input type="text" class="port" placeholder="服务端口" name="port" id="port" v-model="user.port">
             </div>
             <div class="item">
-              <input type="text" class="pnum" placeholder="工作站号" name="pnum" id="pnum"  v-model="user.pnum">
+              <input type="text" class="pnum" placeholder="工作站号" name="pnum" id="pnum"  v-model="user.pnum" @click="showitem">
             </div>
+            <ul class="pnumwrap" v-if="pnum">
+              <li v-for="(item,index) of pnumdata" :key="index" @click="showdata">{{ item }}</li>
+            </ul>
             <div class="item">
               <input type="text" class="jnum" placeholder="请输入工号" name="jnum" id="jnum" v-model="user.jnum">
             </div>
@@ -50,10 +54,18 @@ export default {
         password: ''
       },
       // 工作站号
-      pnumdata: ['11111111111','2222222222','333333333333']
+      pnum: false,
+      pnumdata: ['zxcy','tlsch','cay']
     }
   },
   methods:{
+    showitem () {
+      this.pnum = true
+    },
+    showdata (e) {
+      this.user.pnum = e.target.innerHTML
+      this.pnum = false
+    },
     // store
     ...mapMutations(['saveUser']),
     // 登陆
@@ -125,6 +137,7 @@ export default {
         font-weight: bold;
       }
       .form {
+        position: relative;
         margin-top: .17rem;
         input{
           font-family: "Microsoft YaHei","微软雅黑";
@@ -155,20 +168,41 @@ export default {
           color: rgb(184, 187, 192);
           letter-spacing: .01rem;
         }
-        .clear {
-          clear: both;
-          .IP {
-            float: left;
-            width: 62%;
-            padding-left: .15rem;
-          }
-          .port {
-            float: right;
-            width: 35%;
-            padding-left: .15rem;
+        .pnumwrap {
+          position: absolute;
+          top: 1.2rem;
+          background: #ddd;
+          left: 0;
+          width: 100%;
+          height: 0.92rem;
+          box-sizing: border-box;
+          border: .01rem solid rgb(223, 227, 233);
+          border-top: 0;
+          border-bottom: 0;
+          overflow-y: scroll;
+          li {
+            display: inline-block;
+            font-family: "Microsoft YaHei","微软雅黑";
+            width: 100%;
+            color: #666;
+            font-size: .16rem;
+            box-sizing: border-box;
+            height: .46rem;
+            padding: .15rem 0 .15rem .38rem;
+            border-bottom: .01rem solid #fff;
           }
         }
+        .IP {
+          width: 62%;
+          padding-left: .15rem;
+          margin-right: .11rem;
+        }
+        .port {
+          flex: 1;
+          padding-left: .15rem;
+        }
         .pnum {
+          position: relative;
           background: url(/static/img/arrowicon.png) no-repeat .15rem center;
           background-size: .16rem;
         }
@@ -179,6 +213,9 @@ export default {
         .password {
           background: url(/static/img/passicon.png) no-repeat .15rem center;
           background-size: .16rem;
+        }
+        .first {
+          display: flex;
         }
         .btn {
           box-sizing: border-box;
@@ -191,6 +228,7 @@ export default {
           background-color: #198efb;
           border: none;
           color: #fff;
+          outline: none;
         }
       }
     }
