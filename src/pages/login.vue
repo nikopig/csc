@@ -72,32 +72,34 @@ export default {
   height: 100%;
   width: 100%;
   .container {
+    box-sizing: border-box;
     width: 78%;
     margin: 0 auto;
-    height: 100%;
-    padding: 11% 0;
+    height: 89%;
+    padding-top:11%; 
     display: flex;
     .wrap {
       position: relative;
-      height: 5.0467rem;
+      height: 5.32rem;
       .img {
         width: auto;
-        height: 5.0467rem;
+        height: 5.32rem;
       }
       .txt {
         font-family: "Microsoft YaHei","微软雅黑";
         position: absolute;
         left: 0;
         width: 100%;
-        height: 1.4rem;
+        height: 1.43rem;
+        box-sizing: border-box;
         top: calc(50% - 0.7rem);
         text-align: center;
         color: #fff;
         background-color: rgba(0,0,0,0.678);
-        padding-top: .17rem;
+        padding: .17rem 0 .24rem 0;
         .logo {
           width: auto;
-          height: .58rem;
+          height: .47rem;
         }
         .introC {
           font-size: .26rem;
@@ -114,24 +116,25 @@ export default {
       box-sizing: border-box;
       font-family: "FZLTCHK";
       flex: 1;
-      height: 5.0467rem;
-      padding: 0.7rem 1.3rem;
+      height: 5.32rem;
+      padding: 0.95rem 1.32rem;
       background-color: #fff;
       .title {
         font-size: .26rem;
         color: rgb(53, 64, 82);
-        font-weight: bolder;
+        font-weight: bold;
       }
       .form {
-        margin-top: .20rem;
+        margin-top: .17rem;
         input{
           font-family: "Microsoft YaHei","微软雅黑";
           width: 100%;
           color: #666;
+          font-size: .13rem;
           box-sizing: border-box;
-          height: .49rem;
-          line-height: .49rem;
-          padding: .1rem 0 .1rem .4rem;
+          height: .46rem;
+          line-height: .46rem;
+          padding: .15rem 0 .15rem .38rem;
           border: .01rem solid rgb(223, 227, 233);
           margin-top: .14rem;
           outline: none;
@@ -166,19 +169,22 @@ export default {
           }
         }
         .pnum {
-          background: url(/static/img/arrowicon.png) no-repeat .14rem 52%;
+          background: url(/static/img/arrowicon.png) no-repeat .15rem center;
+          background-size: .16rem;
         }
         .jnum {
-          background: url(/static/img/usericon.png) no-repeat .14rem 52%;
+          background: url(/static/img/usericon.png) no-repeat .15rem center;
+          background-size: .16rem;
         }
         .password {
-          background: url(/static/img/passicon.png) no-repeat .14rem 52%;
+          background: url(/static/img/passicon.png) no-repeat .15rem center;
+          background-size: .16rem;
         }
         .btn {
           box-sizing: border-box;
           width: 100%;
-          height: .49rem;
-          padding: .08rem;
+          height: .46rem;
+          padding: .13rem 1.45rem .13rem 1.44rem;
           font-size: .2rem;
           margin-top: .14rem;
           letter-spacing: .05rem;
