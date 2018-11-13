@@ -176,7 +176,7 @@ export default {
       display: flex;
       box-sizing: border-box;
       font-size: 0.25rem;
-      font-weight: 900;
+      font-weight: 600;
       color:#fff;
       text-align: center;
       font-family: "Microsoft YaHei";
@@ -289,6 +289,7 @@ export default {
           margin: 0.25rem 0rem;
           background: #7fabc5;
           height:4.25rem;
+          font-weight: 500;
           overflow: hidden;
           dl{
             margin:0rem;
