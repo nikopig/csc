@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import {mapMutations} from 'vuex'
+import { mapActions } from 'vuex'
 export default {
   name: 'login',
   data () {
@@ -66,11 +66,11 @@ export default {
       this.pnum = false
     },
     // store
-    ...mapMutations(['saveUser']),
+    ...mapActions('login',['saveUser']),
     // 登陆
     login () {
       this.saveUser(this.user)
-      console.log(this.$store.state.user)
+      console.log(this.$store.state.login.user)
       alert('登陆成功')
     }
   }
