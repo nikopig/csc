@@ -20,9 +20,6 @@
             <div class="item">
               <input type="text" class="pnum" placeholder="工作站号" name="pnum" id="pnum"  v-model="user.pnum" @click="showitem" @blur="blur">
             </div>
-            <ul class="pnumwrap" v-if="pnum">
-              <li v-for="(item,index) of pnumdata" :key="index" @click="showdata">{{ item }}</li>
-            </ul>
             <div class="item">
               <input type="text" class="jnum" placeholder="请输入工号" name="jnum" id="jnum" v-model="user.jnum">
             </div>
@@ -32,6 +29,10 @@
             <div class="item">
               <button  class="btn" @click="login">登陆</button>
             </div>
+            <!-- 站号列表 -->
+            <ul class="pnumwrap" v-if="pnum">
+              <li v-for="(item,index) of pnumdata" :key="index" @click="showdata">{{ item }}</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -145,33 +146,73 @@ export default {
         .form {
           position: relative;
           margin-top: .17rem;
-          input{
-            width: 100%;
-            color: #666;
-            font-size: .16rem;
-            box-sizing: border-box;
-            height: .46rem;
-            line-height: .46rem;
-            padding: .15rem 0 .15rem .38rem;
-            border: .01rem solid rgb(223, 227, 233);
-            margin-top: .14rem;
-            outline: none;
-          }
-          input::-webkit-input-placeholder {
-            color: rgb(184, 187, 192);
-            letter-spacing: .01rem;
-          }
-          input:-moz-placeholder {
-            color: rgb(184, 187, 192);
-            letter-spacing: .01rem;
-          }
-          input::-moz-placeholder {
-            color: rgb(184, 187, 192);
-            letter-spacing: .01rem;
-          }
-          input:-ms-input-placeholder {
-            color: rgb(184, 187, 192);
-            letter-spacing: .01rem;
+          .item {
+            &.first {
+              display: flex;
+            }
+            input{
+              width: 100%;
+              color: #666;
+              font-size: .16rem;
+              box-sizing: border-box;
+              height: .46rem;
+              line-height: .46rem;
+              padding: .15rem 0 .15rem .38rem;
+              border: .01rem solid rgb(223, 227, 233);
+              margin-top: .14rem;
+              outline: none;
+              &::-webkit-input-placeholder {
+                color: rgb(184, 187, 192);
+                letter-spacing: .01rem;
+              }
+              &:-moz-placeholder {
+                color: rgb(184, 187, 192);
+                letter-spacing: .01rem;
+              }
+              &::-moz-placeholder {
+                color: rgb(184, 187, 192);
+                letter-spacing: .01rem;
+              }
+              &:-ms-input-placeholder {
+                color: rgb(184, 187, 192);
+                letter-spacing: .01rem;
+              }
+              &.IP {
+                width: 62%;
+                padding-left: .15rem;
+                margin-right: .11rem;
+              }
+              &.port {
+                flex: 1;
+                padding-left: .15rem;
+              }
+              &.pnum {
+                position: relative;
+                background: url(/static/img/arrowicon.png) no-repeat .15rem center;
+                background-size: .16rem;
+              }
+              &.jnum {
+                background: url(/static/img/usericon.png) no-repeat .15rem center;
+                background-size: .16rem;
+              }
+              &.password {
+                background: url(/static/img/passicon.png) no-repeat .15rem center;
+                background-size: .16rem;
+              }
+            }
+            .btn {
+              box-sizing: border-box;
+              width: 100%;
+              height: .46rem;
+              padding: .13rem 1.45rem .13rem 1.44rem;
+              font-size: .2rem;
+              margin-top: .14rem;
+              letter-spacing: .05rem;
+              background-color: #198efb;
+              border: none;
+              color: #fff;
+              outline: none;
+            }
           }
           .pnumwrap {
             position: absolute;
@@ -195,44 +236,6 @@ export default {
               padding: .15rem 0 .15rem .38rem;
               border-bottom: .01rem solid #fff;
             }
-          }
-          .IP {
-            width: 62%;
-            padding-left: .15rem;
-            margin-right: .11rem;
-          }
-          .port {
-            flex: 1;
-            padding-left: .15rem;
-          }
-          .pnum {
-            position: relative;
-            background: url(/static/img/arrowicon.png) no-repeat .15rem center;
-            background-size: .16rem;
-          }
-          .jnum {
-            background: url(/static/img/usericon.png) no-repeat .15rem center;
-            background-size: .16rem;
-          }
-          .password {
-            background: url(/static/img/passicon.png) no-repeat .15rem center;
-            background-size: .16rem;
-          }
-          .first {
-            display: flex;
-          }
-          .btn {
-            box-sizing: border-box;
-            width: 100%;
-            height: .46rem;
-            padding: .13rem 1.45rem .13rem 1.44rem;
-            font-size: .2rem;
-            margin-top: .14rem;
-            letter-spacing: .05rem;
-            background-color: #198efb;
-            border: none;
-            color: #fff;
-            outline: none;
           }
         }
       }
