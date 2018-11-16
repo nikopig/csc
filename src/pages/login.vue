@@ -18,7 +18,7 @@
               <input type="text" class="port" placeholder="服务端口" name="port" id="port" v-model="user.port">
             </div>
             <div class="item">
-              <input type="text" class="pnum" placeholder="工作站号" name="pnum" id="pnum"  v-model="user.pnum" @click="showitem">
+              <input type="text" class="pnum" placeholder="工作站号" name="pnum" id="pnum"  v-model="user.pnum" @click="showitem" @blur="blur">
             </div>
             <ul class="pnumwrap" v-if="pnum">
               <li v-for="(item,index) of pnumdata" :key="index" @click="showdata">{{ item }}</li>
@@ -57,6 +57,10 @@ export default {
       pnumdata: ['zxcy','tlsch','cay']
     }
   },
+  // computed: {
+  //   // store
+  //   ...mapState({user: state => state.login.user})
+  // },
   methods:{
     showitem () {
       this.pnum = true
@@ -64,6 +68,9 @@ export default {
     showdata (e) {
       this.user.pnum = e.target.innerHTML
       this.pnum = false
+    },
+    blur () {
+      setTimeout(() => { this.pnum = false }, 200)
     },
     // store
     ...mapActions('login',['saveUser']),
@@ -77,154 +84,156 @@ export default {
 }
 </script>
 <style lang="less">
-.page-login {
-  font-family: "Microsoft YaHei","微软雅黑";
-  position: relative;
-  background: #e8eaf1;
+.wrapper {
   height: 100%;
-  width: 100%;
-  .container {
-    box-sizing: border-box;
-    width: 78%;
-    margin: 0 auto;
-    height: 89%;
-    padding-top:11%;
-    display: flex;
-    .wrap {
-      position: relative;
-      height: 5.32rem;
-      .img {
-        width: auto;
-        height: 5.32rem;
-      }
-      .txt {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: 1.43rem;
-        box-sizing: border-box;
-        top: calc(50% - 0.7rem);
-        text-align: center;
-        color: #fff;
-        background-color: rgba(0,0,0,0.678);
-        padding: .17rem 0 .24rem 0;
-        .logo {
-          width: auto;
-          height: .47rem;
-        }
-        .introC {
-          font-size: .26rem;
-          font-weight: bold;
-        }
-        .introE {
-          font-size: .13rem;
-          padding-top: .08rem;
-          font-weight: 500;
-        }
-      }
-    }
-    .formwrap {
+  &.page-login {
+    font-family: "Microsoft YaHei","微软雅黑";
+    position: relative;
+    background: #e8eaf1;
+    width: 100%;
+    .container {
       box-sizing: border-box;
-      flex: 1;
-      height: 5.32rem;
-      padding: 0.95rem 1.32rem;
-      background-color: #fff;
-      .title {
-        font-size: .26rem;
-        color: rgb(53, 64, 82);
-        font-weight: bold;
-      }
-      .form {
+      width: 78%;
+      margin: 0 auto;
+      height: 100%;
+      padding-top:11%;
+      display: flex;
+      .wrap {
         position: relative;
-        margin-top: .17rem;
-        input{
-          width: 100%;
-          color: #666;
-          font-size: .16rem;
-          box-sizing: border-box;
-          height: .46rem;
-          line-height: .46rem;
-          padding: .15rem 0 .15rem .38rem;
-          border: .01rem solid rgb(223, 227, 233);
-          margin-top: .14rem;
-          outline: none;
+        height: 5.32rem;
+        .img {
+          width: auto;
+          height: 5.32rem;
         }
-        input::-webkit-input-placeholder {
-          color: rgb(184, 187, 192);
-          letter-spacing: .01rem;
-        }
-        input:-moz-placeholder {
-          color: rgb(184, 187, 192);
-          letter-spacing: .01rem;
-        }
-        input::-moz-placeholder {
-          color: rgb(184, 187, 192);
-          letter-spacing: .01rem;
-        }
-        input:-ms-input-placeholder {
-          color: rgb(184, 187, 192);
-          letter-spacing: .01rem;
-        }
-        .pnumwrap {
+        .txt {
           position: absolute;
-          top: 1.2rem;
-          background: #ddd;
           left: 0;
           width: 100%;
-          height: 0.92rem;
+          height: 1.43rem;
           box-sizing: border-box;
-          border: .01rem solid rgb(223, 227, 233);
-          border-top: 0;
-          border-bottom: 0;
-          overflow-y: scroll;
-          li {
-            display: inline-block;
+          top: calc(50% - 0.7rem);
+          text-align: center;
+          color: #fff;
+          background-color: rgba(0,0,0,0.678);
+          padding: .17rem 0 .24rem 0;
+          .logo {
+            width: auto;
+            height: .47rem;
+          }
+          .introC {
+            font-size: .26rem;
+            font-weight: bold;
+          }
+          .introE {
+            font-size: .13rem;
+            padding-top: .08rem;
+            font-weight: 500;
+          }
+        }
+      }
+      .formwrap {
+        box-sizing: border-box;
+        flex: 1;
+        height: 5.32rem;
+        padding: 0.95rem 1.32rem;
+        background-color: #fff;
+        .title {
+          font-size: .26rem;
+          color: rgb(53, 64, 82);
+          font-weight: bold;
+        }
+        .form {
+          position: relative;
+          margin-top: .17rem;
+          input{
             width: 100%;
             color: #666;
             font-size: .16rem;
             box-sizing: border-box;
             height: .46rem;
+            line-height: .46rem;
             padding: .15rem 0 .15rem .38rem;
-            border-bottom: .01rem solid #fff;
+            border: .01rem solid rgb(223, 227, 233);
+            margin-top: .14rem;
+            outline: none;
           }
-        }
-        .IP {
-          width: 62%;
-          padding-left: .15rem;
-          margin-right: .11rem;
-        }
-        .port {
-          flex: 1;
-          padding-left: .15rem;
-        }
-        .pnum {
-          position: relative;
-          background: url(/static/img/arrowicon.png) no-repeat .15rem center;
-          background-size: .16rem;
-        }
-        .jnum {
-          background: url(/static/img/usericon.png) no-repeat .15rem center;
-          background-size: .16rem;
-        }
-        .password {
-          background: url(/static/img/passicon.png) no-repeat .15rem center;
-          background-size: .16rem;
-        }
-        .first {
-          display: flex;
-        }
-        .btn {
-          box-sizing: border-box;
-          width: 100%;
-          height: .46rem;
-          padding: .13rem 1.45rem .13rem 1.44rem;
-          font-size: .2rem;
-          margin-top: .14rem;
-          letter-spacing: .05rem;
-          background-color: #198efb;
-          border: none;
-          color: #fff;
-          outline: none;
+          input::-webkit-input-placeholder {
+            color: rgb(184, 187, 192);
+            letter-spacing: .01rem;
+          }
+          input:-moz-placeholder {
+            color: rgb(184, 187, 192);
+            letter-spacing: .01rem;
+          }
+          input::-moz-placeholder {
+            color: rgb(184, 187, 192);
+            letter-spacing: .01rem;
+          }
+          input:-ms-input-placeholder {
+            color: rgb(184, 187, 192);
+            letter-spacing: .01rem;
+          }
+          .pnumwrap {
+            position: absolute;
+            top: 1.2rem;
+            background: #ddd;
+            left: 0;
+            width: 100%;
+            height: 0.92rem;
+            box-sizing: border-box;
+            border: .01rem solid rgb(223, 227, 233);
+            border-top: 0;
+            border-bottom: 0;
+            overflow-y: scroll;
+            li {
+              display: inline-block;
+              width: 100%;
+              color: #666;
+              font-size: .16rem;
+              box-sizing: border-box;
+              height: .46rem;
+              padding: .15rem 0 .15rem .38rem;
+              border-bottom: .01rem solid #fff;
+            }
+          }
+          .IP {
+            width: 62%;
+            padding-left: .15rem;
+            margin-right: .11rem;
+          }
+          .port {
+            flex: 1;
+            padding-left: .15rem;
+          }
+          .pnum {
+            position: relative;
+            background: url(/static/img/arrowicon.png) no-repeat .15rem center;
+            background-size: .16rem;
+          }
+          .jnum {
+            background: url(/static/img/usericon.png) no-repeat .15rem center;
+            background-size: .16rem;
+          }
+          .password {
+            background: url(/static/img/passicon.png) no-repeat .15rem center;
+            background-size: .16rem;
+          }
+          .first {
+            display: flex;
+          }
+          .btn {
+            box-sizing: border-box;
+            width: 100%;
+            height: .46rem;
+            padding: .13rem 1.45rem .13rem 1.44rem;
+            font-size: .2rem;
+            margin-top: .14rem;
+            letter-spacing: .05rem;
+            background-color: #198efb;
+            border: none;
+            color: #fff;
+            outline: none;
+          }
         }
       }
     }
