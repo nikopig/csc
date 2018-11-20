@@ -84,11 +84,12 @@ export default {
         jnum: this.user.jnum,
         password: this.user.password
       }
+      let LoginCookie = String(params.IP) + String(params.port) + String(params.pnum) +String(params.jnum) + String(params.password)
       // 存store
       this.saveUser(params)
       // 存cookie
       if (params.IP) {
-        this.setCookie('LoginCookie', 'logined', 365 * 24 * 60)
+        this.setCookie('LoginCookie', LoginCookie, 365 * 24 * 60)
       }
       console.log(this.getCookie('LoginCookie'))
     }
