@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 export default {
   name: 'login',
   data () {
@@ -58,10 +58,10 @@ export default {
       pnumdata: ['zxcy','tlsch','cay']
     }
   },
-  // computed: {
-  //   // store
-  //   ...mapState({user: state => state.login.user})
-  // },
+  computed: {
+    // 获取store
+    ...mapState({StateData: state => state.login.user})
+  },
   methods:{
     showitem () {
       this.pnum = true
@@ -77,9 +77,20 @@ export default {
     ...mapActions('login',['saveUser']),
     // 登陆
     login () {
-      this.saveUser(this.user)
-      console.log(this.$store.state.login.user)
-      alert('登陆成功')
+      let params = {
+        IP: this.user.IP,
+        port: this.user.port,
+        pnum: this.user.pnum,
+        jnum: this.user.jnum,
+        password: this.user.password
+      }
+      // 存store
+      this.saveUser(params)
+      // 存cookie
+      if (params.IP) {
+        this.setCookie('LoginCookie', 'logined', 365 * 24 * 60)
+      }
+      console.log(this.getCookie('LoginCookie'))
     }
   }
 }
