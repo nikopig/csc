@@ -55,7 +55,7 @@ export default {
       },
       // 工作站号
       pnum: false,
-      pnumdata: ['zxcy','tlsch','cay']
+      pnumdata: ['J01','J02']
     }
   },
   computed: {
@@ -241,7 +241,7 @@ export default {
             border: .01rem solid rgb(223, 227, 233);
             border-top: 0;
             border-bottom: 0;
-            overflow-y: scroll;
+            // overflow-y: scroll;
             li {
               display: inline-block;
               width: 100%;
