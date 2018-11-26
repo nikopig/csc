@@ -84,14 +84,16 @@ export default {
         jnum: this.user.jnum,
         password: this.user.password
       }
-      let LoginCookie = String(params.IP) + String(params.port) + String(params.pnum) +String(params.jnum) + String(params.password)
-      // 存store
-      this.saveUser(params)
       // 存cookie
-      if (params.IP) {
+      if (params.IP && params.port && params.pnum && params.jnum && params.password) {
+        let LoginCookie = String(params.IP) + String(params.port) + String(params.pnum) +String(params.jnum) + String(params.password)
+        // 存store
+        this.saveUser(params)
         this.setCookie('LoginCookie', LoginCookie, 365 * 24 * 60)
+        this.$router.push({path: '/'})
+      } else {
+        alert('请输入登录信息')
       }
-      console.log(this.getCookie('LoginCookie'))
     }
   }
 }
@@ -216,14 +218,16 @@ export default {
               box-sizing: border-box;
               width: 100%;
               height: .46rem;
-              padding: .13rem 1.45rem .13rem 1.44rem;
+              line-height: .46rem;
               font-size: .2rem;
               margin-top: .14rem;
               letter-spacing: .05rem;
               background-color: #198efb;
               border: none;
+              text-align: center;
               color: #fff;
               outline: none;
+              cursor: pointer;
             }
           }
           .pnumwrap {
