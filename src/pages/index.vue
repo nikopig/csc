@@ -13,16 +13,16 @@
             <swiper :options="swiperOption" ref="mySwiper" class="wraps">
               <!-- slides -->
               <swiper-slide>
-                <img src="/static/img/index-icon/img1.jpg">
+                <img src="/static/img/index-icon/imgOne.jpg">
               </swiper-slide>
               <swiper-slide>
-                <img src="/static/img/index-icon/img2.jpg">
+                <img src="/static/img/index-icon/imgTwo.jpg">
               </swiper-slide>
               <swiper-slide>
-                <img src="/static/img/index-icon/img1.jpg">
+                <img src="/static/img/index-icon/imgOne.jpg">
               </swiper-slide>
               <swiper-slide>
-                <img src="/static/img/index-icon/img2.jpg">
+                <img src="/static/img/index-icon/imgTwo.jpg">
               </swiper-slide>
               <!-- Optional controls -->
               <div class="swiper-pagination"  slot="pagination"></div>
@@ -32,20 +32,20 @@
         <div class="row">
           <div class="cell change-box">
             <router-link to="/changeBox">
-              <img class="icon" src="/static/img/index-icon/换箱.png">
+              <img class="icon" src="/static/img/index-icon/changeBox.png">
               <span class="title">换箱</span>
             </router-link>
           </div>
           <div class="cell row-right">
             <span class="small-cell one">
              <router-link to="/mergeBox">
-               <img class="icon" src="/static/img/index-icon/合箱.png">
+               <img class="icon" src="/static/img/index-icon/mergeBox.png">
                 <p class="titl">合箱</p>
              </router-link>
             </span>
             <span class="small-cell two">
               <router-link to="/mergeBox">
-                <img class="icon" src="/static/img/index-icon/移库.png">
+                <img class="icon" src="/static/img/index-icon/moveLibrary.png">
                 <p class="titl">移库</p>
               </router-link>
             </span>
@@ -54,20 +54,20 @@
         <div class="row">
           <div class="cell order">
             <router-link to="/">
-              <img class="icon" src="/static/img/index-icon/订单查询.png">
+              <img class="icon" src="/static/img/index-icon/searchOrder.png">
               <span class="title">订单箱查询</span>
             </router-link>
           </div>
           <div class="cell row-right">
             <span class="small-cell one one-1">
               <router-link to="/">
-                <img class="icon" src="/static/img/index-icon/盘存.png">
+                <img class="icon" src="/static/img/index-icon/takeInventory.png">
                 <p class="titl">盘存</p>
               </router-link>
             </span>
             <span class="small-cell two two-2">
               <router-link to="/">
-                <img class="icon" src="/static/img/index-icon/库存查询.png">
+                <img class="icon" src="/static/img/index-icon/searchInventory.png">
                 <p class="titl">库存查询</p>
               </router-link>
             </span>
@@ -78,7 +78,7 @@
         <div class="news">
           <dl>
             <dt>
-              <img src="/static/img/index-icon/动态.png">
+              <img src="/static/img/index-icon/dynamic.png">
               最新动态</dt>
             <dd v-for="item in worker" :key="item.id">
               <div class="left">
@@ -97,7 +97,7 @@
           </dl>
         </div>
         <div class="workCount">
-          <img src="/static/img/index-icon/工作量统计.png">
+          <img src="/static/img/index-icon/workCount.png">
           <p>工作量统计</p>
         </div>
       </div>
@@ -167,7 +167,6 @@ export default {
   height:100%;
   &.page-index{
     width:100%;
-    height:100%;
     background: #e8eaf1;
     .container{
       width: 100%;
